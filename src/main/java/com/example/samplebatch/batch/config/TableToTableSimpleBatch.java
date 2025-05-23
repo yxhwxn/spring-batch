@@ -1,4 +1,4 @@
-package com.example.samplebatch.batch;
+package com.example.samplebatch.batch.config;
 
 import com.example.samplebatch.entity.AfterEntity;
 import com.example.samplebatch.entity.BeforeEntity;
