@@ -22,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import java.util.Map;
 
 @Configuration
-public class TableToTableBatch1 {
+public class TableToTableSimpleBatch {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager platformTransactionManager;
@@ -30,7 +30,7 @@ public class TableToTableBatch1 {
     private final BeforeRepository beforeRepository;
     private final AfterRepository afterRepository;
 
-    public TableToTableBatch1(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager, BeforeRepository beforeRepository, AfterRepository afterRepository) {
+    public TableToTableSimpleBatch(JobRepository jobRepository, PlatformTransactionManager platformTransactionManager, BeforeRepository beforeRepository, AfterRepository afterRepository) {
 
         this.jobRepository = jobRepository;
         this.platformTransactionManager = platformTransactionManager;
