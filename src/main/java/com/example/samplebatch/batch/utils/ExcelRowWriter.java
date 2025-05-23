@@ -35,7 +35,7 @@ public class ExcelRowWriter implements ItemStreamWriter<BeforeEntity> {
     }
 
     @Override
-    public void write(Chunk<? extends BeforeEntity> chunk) {
+    public void write(Chunk<? extends BeforeEntity> chunk) {    // 컴파일 시점에 구체적으로 어떤 타입인지 모르기 때문에 ?(Generic wildcard)로 처리
         for (BeforeEntity entity : chunk) {
             Row row = sheet.createRow(currentRowNumber++);
             row.createCell(0).setCellValue(entity.getUsername());
