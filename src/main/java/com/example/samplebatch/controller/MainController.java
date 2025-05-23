@@ -33,7 +33,7 @@ public class MainController {
 
         // job이 특정 이름과 특정 번호로 실행될 수 있도록 파라미터 지정(날짜와, 배치 job 식별 값)
         JobParameters jobParameters = new JobParametersBuilder()
-                .addString("date", value)
+                .addString("date", value)   // API 쿼리 파라미터에 넣어준 값을 date로 바인딩
                 .toJobParameters();
 
         jobLauncher.run(jobRegistry.getJob("TableToTableBatch1Job"), jobParameters);

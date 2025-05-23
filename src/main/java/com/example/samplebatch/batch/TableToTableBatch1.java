@@ -44,7 +44,7 @@ public class TableToTableBatch1 {
 
         System.out.println("Table to Table job");
 
-        return new JobBuilder("Table to Table Job", jobRepository)    // job 이름, 트래킹을 위한 repository(메타 데이터 테이블에 기록하기 위한 용도)
+        return new JobBuilder("T2T_Job", jobRepository)    // job 이름, 트래킹을 위한 repository(메타 데이터 테이블에 기록하기 위한 용도)
                 .start(TableToTableStep())  // start(스텝이 들어갈 자리, step의 메서드명을 넣어주면 됨)
 //                여러가지 step을 next로 정의할 수 있음
 //                .next()
@@ -61,9 +61,9 @@ public class TableToTableBatch1 {
     @Bean
     public Step TableToTableStep() {
 
-        System.out.println("Table to Table step");
+        System.out.println("T2T_step");
 
-        return new StepBuilder("table to TableStep", jobRepository)
+        return new StepBuilder("T2T_Step", jobRepository)
                 .<BeforeEntity, AfterEntity>chunk(10, platformTransactionManager)
                 .reader(beforeReader())
                 .processor(middleProcessor())
